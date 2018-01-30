@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="build/css/main.css">
+		<title>xxxx</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--主界面-->
+			<div class="app-group">
+				<!--今日学习-->
+				<div class="app-tab" v-show="viewCtrl.tabShow=='study'">今日学习</div>
+				<!--学习记录-->
+				<div class="app-tab" v-show="viewCtrl.tabShow=='record'">学习记录</div>
+				<!--绘本-->
+				<div class="app-tab" v-show="viewCtrl.tabShow=='picture'">绘本</div>
+				<!--个人中心-->
+				<div class="app-tab" v-show="viewCtrl.tabShow=='center'">个人中心</div>
+			</div>
+			<!--菜单-->
+			<div id="app_menu_bar">
+				<ul id="app_menu_list">
+					<li class="app-menu-tab">
+						<a class="app-menu-btn study" :class="{actived: viewCtrl.tabShow==='study'}" @click="showStudy">
+							<div class="app-menu-icon"></div>
+							<div class="app-menu-text">今日学习</div>
+						</a>
+					</li>
+					<li class="app-menu-tab">
+						<a class="app-menu-btn record" :class="{actived: viewCtrl.tabShow==='record'}" @click="showRecord">
+							<div class="app-menu-icon"></div>
+							<div class="app-menu-text">学习记录</div>
+						</a>
+					</li>
+					<li class="app-menu-tab">
+						<a class="app-menu-btn picture" :class="{actived: viewCtrl.tabShow==='picture'}" @click="showPicture">
+							<div class="app-menu-icon"></div>
+							<div class="app-menu-text">听绘本</div>
+						</a>
+					</li>
+					<li class="app-menu-tab">
+						<a class="app-menu-btn center" :class="{actived: viewCtrl.tabShow==='center'}" @click="showCenter">
+							<div class="app-menu-icon"></div>
+							<div class="app-menu-text">我的</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--alert-->
+			<div class="alert-wrap" v-show="alertData.showStatus">
+				<div class="layer"></div>
+				<div class="alert-box">
+					<div class="alert-text">{{alertData.text}}</div>
+					<div class="alert-btn-wrap">
+						<a class="alert-btn cancel" @click="cancelAlert">取消</a>
+						<a class="alert-btn confirm" @click="confirmAlert">确定</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="build/lib/vue.js"></script>
+		<script type="text/javascript" src="build/js/common.js"></script>
+		<script type="text/javascript" src="build/js/main.js"></script>
+	</body>
+</html>
