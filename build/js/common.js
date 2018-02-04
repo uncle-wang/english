@@ -1,0 +1,1 @@
+var Music=function(i){var o=new Audio;this.audio=o,i&&(this.audio.src=i)};Music.prototype.play=function(){this.audio.play()};
