@@ -13,7 +13,14 @@
 			<!--主界面-->
 			<div class="app-group">
 				<!--今日学习-->
-				<div class="app-tab" v-show="viewCtrl.tabShow=='study'">今日学习</div>
+				<div class="app-tab" v-show="viewCtrl.tabShow=='study'">
+					<div class="class-cover">
+						<div class="class-cover-icon"></div>
+					</div>
+					<div class="class-title"></div>
+					<div class="class-fun"></div>
+					<div class="class-module"></div>
+				</div>
 				<!--学习记录-->
 				<div class="app-tab" v-show="viewCtrl.tabShow=='record'">学习记录</div>
 				<!--绘本-->
